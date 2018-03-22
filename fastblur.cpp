@@ -193,7 +193,7 @@ int FastBlur(unsigned char *img, unsigned char *dst, int width, int height, int 
                 temp[x] = temp[total_flip + total_flip - x];
             }
         }
-        if (roi_w + roi_x + radius > width)      // Fill right pixels with mirror data
+        if (roi_w + roi_x + radius > width)           // Fill right pixels with mirror data
         {
             register int x = 0;
             register int total_flip = roi_w + roi_x + radius - width;

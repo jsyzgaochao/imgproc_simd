@@ -7,8 +7,9 @@ int FastBlur(unsigned char *img, unsigned char *dst, int width, int height, int 
 int DownSampling2X(unsigned char *src, unsigned char *dst, int width, int height);
 int DownSampling4X(unsigned char *src, unsigned char *dst, int width, int height);
 int DownSampling8X(unsigned char *src, unsigned char *dst, int width, int height);
-void SplitUV(unsigned char *src, unsigned char *dst, int width, int height);
-void MergeUV(unsigned char *src, unsigned char *dst, int width, int height);
+void SplitUV(unsigned char *src, unsigned char *dst, int size);
+void MergeUV(unsigned char *src, unsigned char *dst, int size);
+void Average(unsigned char *src1, unsigned char *src2, unsigned char *dst, int size);
 
 #endif
 

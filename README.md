@@ -9,8 +9,9 @@ int FastBlur(unsigned char *img, unsigned char *dst, int width, int height, int 
 int DownSampling2X(unsigned char *src, unsigned char *dst, int width, int height);
 int DownSampling4X(unsigned char *src, unsigned char *dst, int width, int height);
 int DownSampling8X(unsigned char *src, unsigned char *dst, int width, int height);
-void SplitUV(unsigned char *src, unsigned char *dst, int width, int height);
-void MergeUV(unsigned char *src, unsigned char *dst, int width, int height);
+void SplitUV(unsigned char *src, unsigned char *dst, int size);
+void MergeUV(unsigned char *src, unsigned char *dst, int size);
+void Average(unsigned char *src1, unsigned char *src2, unsigned char *dst, int size);
 ```
 
 Test:
@@ -27,5 +28,6 @@ The input image has the resolution of 1920*1090 and only 1 channel. The function
 |DownSampling8X|92 us      |
 |SplitUV       |50 us      |
 |MergeUV       |40 us      |
+|Average       |235 us     |
 
 Part of the algorithm and code refer to Imageshop (http://www.cnblogs.com/Imageshop/) , and use AVX/AVX2 instruction set to optimize the code.
